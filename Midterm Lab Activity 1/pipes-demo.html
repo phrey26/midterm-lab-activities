@@ -1,0 +1,73 @@
+<p>pipes-demo works!</p>
+
+<!--<div>Present Date:{{ presentDate | date }}</div> -->
+<section>
+  <div>
+    This is a short date :- {{ presentDate| date:'shortDate' }} <br/>
+    This line shows the full date :- {{ presentDate | date:'fullDate' }} <br/>
+    This will show a formayyed date :- {{ presentDate | date:'M/dd/yyyy' }} <br/>
+    This indicates the hours and minutes :- {{ presentDate | date:'h:mm' }}
+    {{ name | uppercase }}
+  </div>
+</section>
+
+<p></p>
+
+<section>
+  <div>
+    Date with uppercase: {{ presentDate | date: 'fullDate' | uppercase }} <br/>
+    Date with lowercase: {{ presentDate | date: 'medium' | lowercase }} <br/>
+  </div>
+</section>
+
+<p></p>
+
+<section>
+  <div>
+    {{ price | currency }}
+    {{ price | currency : 'USD' : 'symbol' : '1.0-0'  }}
+    {{ price | currency : 'EUR' : 'code' : '2.2-4'  }}
+  </div>
+</section>
+
+<section>
+  <div>
+    <h3>Health index:- {{ Champs | slice:2 }}</h3>
+    <h4>Start and End index:- {{ Champs | slice:1:2 }}</h4>
+    <h5>Negative index:- {{ Champs | slice:-2 }}</h5>
+    <h6>Negative start and end index:- {{ Champs | slice:-4:-2 }}</h6>
+  </div>
+</section>
+
+<section>
+  <div>
+    <h3>Decimal Pipe</h3>
+    <p> {{ decimalNum1 | number }} </p>
+    <p> {{ decimalNum2 | number }} </p>
+  </div>
+</section>
+
+<section>
+  <div>
+    <h3>Pecent Pipe</h3>
+    <h2>Zed</h2>
+    <p>Health: {{ HealthValue | percent }}</p>
+    <p>Mana: {{ ManaPool | percent }}</p>
+  </div>
+</section>
+
+<section>
+  <h3>KeyValuePipe</h3>
+  @for (champ of champDetail | keyvalue; track champ.key) {
+    <div>
+      <strong>{{ champ.key }}</strong>: {{ champ.value }}
+    </div>
+  }
+
+  <h3>Scores</h3>
+  @for (score of scores | keyvalue; track score.key) {
+    <div>
+      Champ: <strong>{{ score.key }}</strong> Name: {{ score.value }}
+    </div>
+  }
+</section>

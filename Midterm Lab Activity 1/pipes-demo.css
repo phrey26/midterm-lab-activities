@@ -1,0 +1,65 @@
+/* General page styling */
+:host {
+  display: block;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: #f7f9fc;
+  padding: 24px;
+  color: #333;
+}
+
+/* Section layout */
+section {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Inner content */
+section > div {
+  line-height: 1.6;
+}
+
+/* Headings */
+h2, h3, h4, h5, h6 {
+  margin: 8px 0;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+h3 {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 4px;
+}
+
+/* Paragraphs */
+p {
+  margin: 6px 0;
+}
+
+/* Emphasis */
+strong {
+  color: #1a73e8;
+}
+
+/* Currency & numbers spacing */
+section div span,
+section div p {
+  display: block;
+  margin: 4px 0;
+}
+
+/* KeyValue lists */
+section div {
+  padding: 4px 0;
+}
+
+/* Small visual separator between groups */
+section:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #f0f0f0;
+  margin-top: 12px;
+}
