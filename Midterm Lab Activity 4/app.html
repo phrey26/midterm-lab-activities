@@ -1,0 +1,28 @@
+<h2 class="title">EMPLOYEES LIST</h2>
+
+<table class="employee-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>FIRST NAME</th>
+      <th>LAST NAME</th>
+      <th>EMAIL</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (employee of employees; track employee.id) {
+      <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.firstname }}</td>
+        <td>{{ employee.lastname }}</td>
+        <td>{{ employee.email }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+
+
+
+<router-outlet />
