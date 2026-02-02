@@ -1,0 +1,26 @@
+<div class="services-page">
+  <h2>Services</h2>
+
+  <input
+    class="search-input"
+    type="text"
+    placeholder="Search by title or body..."
+    (input)="onSearch($event.target.value)"
+  />
+
+  <p class="record-count">
+    Showing {{ (filteredPosts$ | async)?.length }} records
+  </p>
+
+  <!-- Optional error banner -->
+  <div class="error-banner" *ngIf="error">
+    Failed to load service records.
+  </div>
+
+  <ul class="services-list">
+    <li class="service-item" *ngFor="let post of filteredPosts$ | async">
+      <strong>{{ post.title | uppercase }}</strong>
+      <p>{{ post.body | pipes:100 }}</p>
+    </li>
+  </ul>
+</div>
